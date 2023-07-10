@@ -1,0 +1,115 @@
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    /* Begin::Aside */
+    .aside.aside-default {
+        display: flex;
+        flex-direction: column;
+        /* box-shadow: var(--bs-box-shadow); */
+        background-color: #fff;
+    }
+
+    .aside.aside-default {
+        width: 300px;
+        transition: width 0.3s ease;
+    }
+
+    .aside.aside-default {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 98;
+        overflow: hidden;
+    }
+
+    .aside.aside-default .aside-logo {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .aside.aside-default .aside-logo .logo-default {
+        display: inline-block;
+    }
+
+    .aside.aside-default .aside-logo .logo-minimize {
+        display: none;
+    }
+
+    .mt-lg-2 {
+        margin-top: 0.5rem !important;
+    }
+
+    .mb-lg-0 {
+        margin-bottom: 0 !important;
+    }
+
+    .me-lg-n5 {
+        margin-right: -1.25rem !important;
+    }
+
+    .pe-lg-5 {
+        padding-right: 1.25rem !important;
+    }
+
+    /* End::Aside */
+
+    /* Begin::Wrapper */
+    .wrapper {
+        background-color: #fff;
+        /* padding-right: 40px; */
+        transition: padding-left 0.3s ease, margin-right 0.3s ease;
+    }
+
+    .wrapper {
+        transition: padding-left 0.3s ease;
+        padding-left: 300px;
+    }
+
+    .wrapper .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: stretch;
+        position: fixed;
+        top: 0;
+        z-index: 2;
+        height: 79px;
+        transition: left 0.3s ease;
+        width: -webkit-fill-available;
+        background: white;
+        box-shadow: var(--bs-box-shadow-sm);
+    }
+
+    .content {
+        margin-top: 80px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        /* border-radius: 1.5rem; */
+    }
+
+    /* End::Wrapper */
+}
+
+@media (max-width: 991px) {
+    /* Begin::Aside */
+    .aside.aside-default {
+        display: none;
+    }
+    /* End::Aside */
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+}
