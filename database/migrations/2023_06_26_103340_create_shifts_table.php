@@ -18,7 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('facilities_id');
             $table->foreign('facilities_id')->references('id')->on('facilities')->onDelete('cascade');
 
-            $table->enum('role', ['rn', 'lpa', 'cna']);
+            $table->enum('role', ['rn', 'lpn', 'cna']);
             $table->integer('positions');
             $table->date('date');
             $table->tinyInteger('shift_time')->comment('1=Morning Shift: 7:00AM - 3:00PM, 2=Noon Shift: 3:00PM - 11:00PM, 3=Night Shift: 11:00PM - 7:00AM, 4=Custom');

@@ -78,7 +78,6 @@ class AuthenticationController extends Controller
                     'token' => encrypt($request->email),
                 ]);
             }
-
             $token = DB::table('password_reset_tokens')->where('email', $request->email)->first()->token;
             $url = URL::to('password/reset') . '/' . $token;
             $mail = Helper::resetpassword($request->email, $url);

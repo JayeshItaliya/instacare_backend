@@ -47,7 +47,7 @@
                                                     class="object-fit-cover rounded-circle outline-3 outline-secondary outline-solid mb-2"
                                                     width="100" height="100">
                                                 <p class="fs-5 fw-bold text-dark">{{ $staff->fullname }}</p>
-                                                <p class="text-secondary mb-2">{{ $staff->rolename() }}</p>
+                                                <p class="text-secondary mb-2">{{ $staff->rolename }}</p>
                                             </div>
                                             <span class="text-muted position-absolute p-2 cursor-pointer"
                                                 data-bs-toggle="dropdown" aria-expanded="false" style="top:5%;right:5%">

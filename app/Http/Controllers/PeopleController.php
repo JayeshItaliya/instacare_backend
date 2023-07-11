@@ -39,6 +39,16 @@ class PeopleController extends Controller
      */
     public function store(Request $request)
     {
+        // Validator::extend('is_png',function($attribute, $value, $params, $validator) {
+        //     $image = base64_decode($value);
+        //     $f = finfo_open();
+        //     $result = finfo_buffer($f, $image, FILEINFO_MIME_TYPE);
+        //     return $result == 'image/png';
+        // });
+        // $request->validate([
+        //     'snap_image' => 'is_png'
+        // ]);
+
         $request->validate([
             'fname' => 'required',
             'lname' => 'required',

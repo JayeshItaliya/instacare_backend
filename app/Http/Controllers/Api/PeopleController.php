@@ -21,7 +21,7 @@ class PeopleController extends Controller
                 $people_list[] = [
                     'id' => $people->id,
                     'fullname' => $people->fullname,
-                    'role' => $people->rolename(),
+                    'role' => $people->rolename,
                     'email' => $people->email,
                     'status' => $people->status,
                     'review' => $people->review,
@@ -62,7 +62,7 @@ class PeopleController extends Controller
             $peopledata = [
                 'id' => $people->id,
                 'fullname' => $people->fullname,
-                'role' => $people->rolename(),
+                'role' => $people->rolename,
                 'fname' => $people->fname,
                 'lname' => $people->lname,
                 'email' => $people->email,

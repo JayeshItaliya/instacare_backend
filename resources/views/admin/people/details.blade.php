@@ -87,10 +87,18 @@
         <div class="card bg-white border-0 mb-3">
             <div class="card-body pb-0">
                 <div class="nav nav-underline" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                    <a class="nav-link fw-bold text-muted me-5 active" id="tab-account-info-tab" data-bs-toggle="pill" href="#tab-account-info" role="tab" aria-controls="tab-account-info" aria-selected="true"> Account Info </a>
-                    <a class="nav-link fw-bold text-muted me-5" id="tab-checklist-tab" data-bs-toggle="pill" href="#tab-checklist" role="tab" aria-controls="tab-checklist" aria-selected="true"> Checklist </a>
-                    <a class="nav-link fw-bold text-muted me-5" id="tab-reviews-tab" data-bs-toggle="pill" href="#tab-reviews" role="tab" aria-controls="tab-reviews" aria-selected="true"> Reviews <span class="badge rounded-pill text-bg-highlight py-2">04</span></a>
-                    <a class="nav-link fw-bold text-muted me-5" id="tab-documents-tab" data-bs-toggle="pill" href="#tab-documents" role="tab" aria-controls="tab-documents" aria-selected="true"> Documents </a>
+                    <a class="nav-link fw-bold text-muted me-5 active" id="tab-account-info-tab" data-bs-toggle="pill"
+                        href="#tab-account-info" role="tab" aria-controls="tab-account-info" aria-selected="true">
+                        Account Info </a>
+                    <a class="nav-link fw-bold text-muted me-5" id="tab-checklist-tab" data-bs-toggle="pill"
+                        href="#tab-checklist" role="tab" aria-controls="tab-checklist" aria-selected="true"> Checklist
+                    </a>
+                    <a class="nav-link fw-bold text-muted me-5" id="tab-reviews-tab" data-bs-toggle="pill"
+                        href="#tab-reviews" role="tab" aria-controls="tab-reviews" aria-selected="true"> Reviews <span
+                            class="badge rounded-pill text-bg-highlight py-2">04</span></a>
+                    <a class="nav-link fw-bold text-muted me-5" id="tab-documents-tab" data-bs-toggle="pill"
+                        href="#tab-documents" role="tab" aria-controls="tab-documents" aria-selected="true">
+                        Documents </a>
                 </div>
             </div>
         </div>
@@ -259,87 +267,119 @@
                                     <div class="col-lg-10 col-12 mb-2">
                                         <div
                                             class="form-check form-switch d-flex justify-content-between px-0 mb-2 align-items-center">
-                                            <label class="form-check-label default" for="">IL W-4 (Withholding / Exemptions)</label>
+                                            <label class="form-check-label default" for="">IL W-4 (Withholding /
+                                                Exemptions)</label>
                                             @if (@$peopledata->user_docs->il_w4 == '')
-                                                <label for="il_w4" class="badge text-bg-secondary ps-8 pe-8">+ Add</label>
-                                                <input type="file" class="d-none submit_doc" name="il_w4" id="il_w4" accept=".jpg,.jpeg" data-fname="il_w4">
+                                                <label for="il_w4" class="badge text-bg-secondary ps-8 pe-8">+
+                                                    Add</label>
+                                                <input type="file" class="d-none submit_doc" name="il_w4"
+                                                    id="il_w4" accept=".jpg,.jpeg" data-fname="il_w4">
                                             @else
                                                 <span class="badge text-bg-success">Uploaded</span>
                                             @endif
                                         </div>
                                     </div>
                                     <div class="col-lg-10 col-12 mb-2">
-                                        <div class="form-check form-switch d-flex justify-content-between px-0 mb-2 align-items-center">
-                                            <label class="form-check-label default" for="">Employment Verification</label>
+                                        <div
+                                            class="form-check form-switch d-flex justify-content-between px-0 mb-2 align-items-center">
+                                            <label class="form-check-label default" for="">Employment
+                                                Verification</label>
                                             @if (@$peopledata->user_docs->emp_verification == '')
-                                                <label for="emp_verification" class="badge text-bg-secondary ps-8 pe-8">+ Add</label>
-                                                <input type="file" class="d-none submit_doc" name="emp_verification" id="emp_verification" accept=".jpg,.jpeg" data-fname="emp_verification">
+                                                <label for="emp_verification" class="badge text-bg-secondary ps-8 pe-8">+
+                                                    Add</label>
+                                                <input type="file" class="d-none submit_doc" name="emp_verification"
+                                                    id="emp_verification" accept=".jpg,.jpeg"
+                                                    data-fname="emp_verification">
                                             @else
                                                 <span class="badge text-bg-success">Uploaded</span>
                                             @endif
                                         </div>
                                     </div>
                                     <div class="col-lg-10 col-12 mb-2">
-                                        <div class="form-check form-switch d-flex justify-content-between px-0 mb-2 align-items-center">
-                                            <label class="form-check-label default" for="">Background Check Authentication Form</label>
+                                        <div
+                                            class="form-check form-switch d-flex justify-content-between px-0 mb-2 align-items-center">
+                                            <label class="form-check-label default" for="">Background Check
+                                                Authentication Form</label>
                                             @if (@$peopledata->user_docs->bg_auth_form == '')
-                                                <label for="bg_auth_form" class="badge text-bg-secondary ps-8 pe-8">+ Add</label>
-                                                <input type="file" class="d-none submit_doc" name="bg_auth_form" id="bg_auth_form" accept=".jpg,.jpeg" data-fname="bg_auth_form">
+                                                <label for="bg_auth_form" class="badge text-bg-secondary ps-8 pe-8">+
+                                                    Add</label>
+                                                <input type="file" class="d-none submit_doc" name="bg_auth_form"
+                                                    id="bg_auth_form" accept=".jpg,.jpeg" data-fname="bg_auth_form">
                                             @else
                                                 <span class="badge text-bg-success">Uploaded</span>
                                             @endif
                                         </div>
                                     </div>
                                     <div class="col-lg-10 col-12 mb-2">
-                                        <div class="form-check form-switch d-flex justify-content-between px-0 mb-2 align-items-center">
-                                            <label class="form-check-label default" for="">Direct Deposit Form</label>
+                                        <div
+                                            class="form-check form-switch d-flex justify-content-between px-0 mb-2 align-items-center">
+                                            <label class="form-check-label default" for="">Direct Deposit
+                                                Form</label>
                                             @if (@$peopledata->user_docs->direct_deposit == '')
-                                                <label for="direct_deposit" class="badge text-bg-secondary ps-8 pe-8">+ Add</label>
-                                                <input type="file" class="d-none submit_doc" name="direct_deposit" id="direct_deposit" accept=".jpg,.jpeg" data-fname="direct_deposit">
+                                                <label for="direct_deposit" class="badge text-bg-secondary ps-8 pe-8">+
+                                                    Add</label>
+                                                <input type="file" class="d-none submit_doc" name="direct_deposit"
+                                                    id="direct_deposit" accept=".jpg,.jpeg" data-fname="direct_deposit">
                                             @else
                                                 <span class="badge text-bg-success">Uploaded</span>
                                             @endif
                                         </div>
                                     </div>
                                     <div class="col-lg-10 col-12 mb-2">
-                                        <div class="form-check form-switch d-flex justify-content-between px-0 mb-2 align-items-center">
-                                            <label class="form-check-label default" for="">Health Insurance Acknowledgement Form</label>
+                                        <div
+                                            class="form-check form-switch d-flex justify-content-between px-0 mb-2 align-items-center">
+                                            <label class="form-check-label default" for="">Health Insurance
+                                                Acknowledgement Form</label>
                                             @if (@$peopledata->user_docs->health_ins == '')
-                                                <label for="health_ins" class="badge text-bg-secondary ps-8 pe-8">+ Add</label>
-                                                <input type="file" class="d-none submit_doc" name="health_ins" id="health_ins" accept=".jpg,.jpeg" data-fname="health_ins">
+                                                <label for="health_ins" class="badge text-bg-secondary ps-8 pe-8">+
+                                                    Add</label>
+                                                <input type="file" class="d-none submit_doc" name="health_ins"
+                                                    id="health_ins" accept=".jpg,.jpeg" data-fname="health_ins">
                                             @else
                                                 <span class="badge text-bg-success">Uploaded</span>
                                             @endif
                                         </div>
                                     </div>
                                     <div class="col-lg-10 col-12 mb-2">
-                                        <div class="form-check form-switch d-flex justify-content-between px-0 mb-2 align-items-center">
+                                        <div
+                                            class="form-check form-switch d-flex justify-content-between px-0 mb-2 align-items-center">
                                             <label class="form-check-label default" for="">8850</label>
                                             @if (@$peopledata->user_docs->doc_8850 == '')
-                                                <label for="doc_8850" class="badge text-bg-secondary ps-8 pe-8">+ Add</label>
-                                                <input type="file" class="d-none submit_doc" name="doc_8850" id="doc_8850" accept=".jpg,.jpeg" data-fname="doc_8850">
+                                                <label for="doc_8850" class="badge text-bg-secondary ps-8 pe-8">+
+                                                    Add</label>
+                                                <input type="file" class="d-none submit_doc" name="doc_8850"
+                                                    id="doc_8850" accept=".jpg,.jpeg" data-fname="doc_8850">
                                             @else
                                                 <span class="badge text-bg-success">Uploaded</span>
                                             @endif
                                         </div>
                                     </div>
                                     <div class="col-lg-10 col-12 mb-2">
-                                        <div class="form-check form-switch d-flex justify-content-between px-0 mb-2 align-items-center">
-                                            <label class="form-check-label default" for="">CPR Certification</label>
+                                        <div
+                                            class="form-check form-switch d-flex justify-content-between px-0 mb-2 align-items-center">
+                                            <label class="form-check-label default" for="">CPR
+                                                Certification</label>
                                             @if (@$peopledata->user_docs->crp_certification == '')
-                                                <label for="crp_certification" class="badge text-bg-secondary ps-8 pe-8">+ Add</label>
-                                                <input type="file" class="d-none submit_doc" name="crp_certification" id="crp_certification" accept=".jpg,.jpeg" data-fname="crp_certification">
+                                                <label for="crp_certification" class="badge text-bg-secondary ps-8 pe-8">+
+                                                    Add</label>
+                                                <input type="file" class="d-none submit_doc" name="crp_certification"
+                                                    id="crp_certification" accept=".jpg,.jpeg"
+                                                    data-fname="crp_certification">
                                             @else
                                                 <span class="badge text-bg-success">Uploaded</span>
                                             @endif
                                         </div>
                                     </div>
                                     <div class="col-lg-10 col-12 mb-2">
-                                        <div class="form-check form-switch d-flex justify-content-between px-0 mb-2 align-items-center">
-                                            <label class="form-check-label default" for="">Employee Handbook</label>
+                                        <div
+                                            class="form-check form-switch d-flex justify-content-between px-0 mb-2 align-items-center">
+                                            <label class="form-check-label default" for="">Employee
+                                                Handbook</label>
                                             @if (@$peopledata->user_docs->emp_handbook == '')
-                                                <label for="emp_handbook" class="badge text-bg-secondary ps-8 pe-8">+ Add</label>
-                                                <input type="file" class="d-none submit_doc" name="emp_handbook" id="emp_handbook" accept=".jpg,.jpeg" data-fname="emp_handbook">
+                                                <label for="emp_handbook" class="badge text-bg-secondary ps-8 pe-8">+
+                                                    Add</label>
+                                                <input type="file" class="d-none submit_doc" name="emp_handbook"
+                                                    id="emp_handbook" accept=".jpg,.jpeg" data-fname="emp_handbook">
                                             @else
                                                 <span class="badge text-bg-success">Uploaded</span>
                                             @endif
@@ -468,8 +508,10 @@
                             <div class="col-lg-2 col-md-4 col-6">
 
                                 <div class="position-relative text-center" data-border-radius="50px">
-                                    <img src="{{Helper::image_path('')}}" class="card-img" alt="...">
-                                    <h5 class="position-absolute bottom-0 text-center w-100 bg-dark text-white fw-normal py-2">Card title</h5>
+                                    <img src="{{ Helper::image_path('') }}" class="card-img" alt="...">
+                                    <h5
+                                        class="position-absolute bottom-0 text-center w-100 bg-dark text-white fw-normal py-2">
+                                        Card title</h5>
                                 </div>
 
                             </div>
@@ -595,7 +637,7 @@
     <script>
         $('.submit_doc').on('change', function(event) {
             var inputName = $(this).attr('data-fname');
-            var element = $('[for="'+inputName+'"]');
+            var element = $('[for="' + inputName + '"]');
             var html = element.html();
             var fileInput = event.target;
             var file = fileInput.files[0];
