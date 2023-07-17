@@ -33,7 +33,7 @@ class AuthenticationController extends Controller
 
         if (Auth::attempt($request->only('email', 'password'))) {
             if (Auth::user()->deleted_at == 0) {
-                User::where('id', auth()->user()->id)->update(['is_web_login' => 1]);
+                User::where('id', auth()->user()->id)->update(['is_web_login' => 1, 'status' => 1]);
                 return redirect('/')->with('success', 'Login Successfully');
             } else {
                 Auth::logout();
@@ -49,7 +49,7 @@ class AuthenticationController extends Controller
      */
     public function logout()
     {
-        User::where('id', auth()->user()->id)->update(['is_web_login' => 0]);
+        User::where('id', auth()->user()->id)->update(['is_web_login' => 0, 'status' => 5]);
         Auth::logout();
         return redirect('login')->with('success', 'Logout Successfully');
     }

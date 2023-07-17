@@ -14,7 +14,7 @@
                 </div>
             </div>
             <div class="col-auto">
-                <a href="{{ URL::to('shifts/add') }}" class="btn btn-highlight text-uppercase rounded-pill fs-8">
+                <a href="{{ URL::to('shifts/create') }}" class="btn btn-highlight text-uppercase rounded-pill fs-8">
                     <i class="fa-regular fa-plus me-2 fs-9"></i>add shift
                 </a>
             </div>

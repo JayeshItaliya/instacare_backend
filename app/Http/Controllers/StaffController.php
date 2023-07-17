@@ -46,13 +46,14 @@ class StaffController extends Controller
             'language' => 'required',
         ], ['*.required' => 'This field is required.']);
 
+        $password = rand(8); 
         $user = new User;
         $user->type = 2;
         $user->fname = $request->fname;
         $user->lname     = $request->lname;
         $user->phone  = $request->phone;
         $user->email  = $request->email_address;
-        $user->password  = Hash::make('12345678');
+        $user->password  = Hash::make($password);
         $user->role = $request->role;
         $user->city = $request->city;
         $user->state = $request->state;

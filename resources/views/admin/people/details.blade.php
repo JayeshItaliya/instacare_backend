@@ -27,7 +27,7 @@
                     </div>
                     <div class="col-lg-9">
                         <h3 class="text-white fw-bold">{{ $peopledata->fullname }}</h3>
-                        <p class="mb-3 text-secondary fw-semibold">{{ $peopledata->rolename() }}</p>
+                        <p class="mb-3 text-secondary fw-semibold">{{ $peopledata->rolename }}</p>
                         <div class="row">
                             <div class="col-auto">
                                 <p class="text-secondary fw-semibold"><small class="fw-normal fs-9">Emp.ID</small>
@@ -39,7 +39,7 @@
                                     <span class="fw-normal">Status:</span>
                                     <i
                                         class="fa-solid fa-circle-small fs-9 text-{{ $peopledata->status == 1 ? 'success' : ($peopledata->status == 2 ? 'warning' : ($peopledata->status == 5 ? 'muted' : 'danger')) }}"></i>
-                                    <span class="text-white">{{ $peopledata->status() }}<i
+                                    <span class="text-white">{{ $peopledata->status_text }}<i
                                             class="fa-regular fa-chevron-down fa-sm ms-2"></i></span>
                                 </p>
                                 <ul class="dropdown-menu">

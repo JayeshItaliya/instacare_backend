@@ -41,7 +41,7 @@ class Helper
             $path = url('storage/app/public/assets/admin/images/theme/logo.svg');
         } elseif (Str::contains($image, 'default') || Str::contains($image, 'user')) {
             $path = url('storage/app/public/assets/admin/images/users/' . $image);
-        } elseif (Str::contains($image, 'document') ) {
+        } elseif (Str::contains($image, 'document')) {
             $path = url('storage/app/public/assets/admin/images/documents/' . $image);
         } else {
             $path = 'https://placehold.co/400';
@@ -50,10 +50,23 @@ class Helper
     }
     public static function resetpassword($email, $url)
     {
-        $data = ['title' => 'Reset Password', 'email' => $email, 'url' => $url, 'logo' => Helper::image_path('logo.svg')];
+        $data = ['title' => 'Reset Password', 'email' => $email, 'url' => $url];
         try {
             Mail::send('email.reset_password', $data, function ($message) use ($data) {
-                $message->from(env('MAIL_USERNAME'))->subject($data['title']);
+                $message->from(config('app.mail_username'))->subject($data['title']);
+                $message->to($data['email']);
+            });
+            return 1;
+        } catch (\Throwable $th) {
+            return 0;
+        }
+    }
+    public static function send_credentials($name, $email, $password)
+    {
+        $data = ['title' => 'Login Credentials', 'name' => $name, 'email' => $email, 'password' => $password];
+        try {
+            Mail::send('email.user_credentials', $data, function ($message) use ($data) {
+                $message->from(config('app.mail_username'))->subject($data['title']);
                 $message->to($data['email']);
             });
             return 1;

@@ -44,7 +44,7 @@ class User extends Authenticatable
         'password',
     ];
 
-    protected $appends = ['fullname', 'image_url', 'rolename'];
+    protected $appends = ['fullname', 'image_url', 'rolename', 'status_text'];
 
     public function getFullNameAttribute($value)
     {
@@ -73,6 +73,21 @@ class User extends Authenticatable
             return 'CNA';
         } elseif ($this->role == 'rn') {
             return 'RN';
+        }
+    }
+
+    public function getStatusTextAttribute()
+    {
+        if ($this->status == 1) {
+            return 'Available';
+        } elseif ($this->status == 2) {
+            return 'Away';
+        } elseif ($this->status == 3) {
+            return 'Busy';
+        } elseif ($this->status == 4) {
+            return 'DND';
+        } else {
+            return 'Offline';
         }
     }
 
@@ -117,20 +132,24 @@ class User extends Authenticatable
     {
         return $this->hasOne('App\Models\UserOtherSetting', 'user_id', 'id')->select('*');
     }
+    public function user_docs()
+    {
+        return $this->hasOne('App\Models\UserDoc', 'user_id', 'id')->select('*');
+    }
 
     public function contacts(): HasMany
     {
         return $this->hasMany(MessageContact::class);
     }
 
-    public static function getFacilityUsers( $type = null ): Collection
+    public static function getFacilityUsers($type = null): Collection
     {
         $users = self::select([
             'id', 'fname', 'lname', 'image', 'type',
         ])->whereNotIn('type', [self::TYPE_ADMIN]);
 
-        if ( $type ) {
-            $users->where([ 'type' => $type ]);
+        if ($type) {
+            $users->where(['type' => $type]);
         }
         return $users->get();
     }

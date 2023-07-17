@@ -57,12 +57,14 @@
 <body>
     <div class="container">
         <div class="logo">
-            <img src="{{ Helper::image_path('logo.svg') }}" alt="Logo">
+            <img src="{{ $logo }}" alt="Logo">
         </div>
         <div class="content">
-            <p>Hi {{ $name }}! Here is your login credentials</p><br>
-            <p>Email: <strong>{{ $email }}</strong></p>
-            <p>Password: <strong>{{ $password }}</strong></p>
+            <h2>Reset Your Password</h2>
+            <p>Click the button below to reset your password.</p>
+            <p>
+                <a class="button" href="{{ $url }}">Reset Password</a>
+            </p>
         </div>
         <div class="footer">
             © {{ data('Y') }} Instacare. All rights reserved.

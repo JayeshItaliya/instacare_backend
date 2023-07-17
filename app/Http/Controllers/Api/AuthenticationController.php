@@ -27,6 +27,7 @@ class AuthenticationController extends Controller
         $user = User::where('email', $request->email)->first();
         if (!empty($user) & Hash::check($request->password, $user->password)) {
             $token = $user->createToken('api_token')->plainTextToken;
+            User::where('id', auth('sanctum')->user()->id)->update(['is_web_login' => 1, 'status' => 1]);
             return response()->json(['status' => 1, 'message' => 'Successfull', 'token' => $token, 'userdata' => $user], 200);
         } else {
             return response()->json(['status' => 0, 'message' => 'Invalid Email/Password'], 200);
@@ -37,7 +38,7 @@ class AuthenticationController extends Controller
     {
         $token = explode('|',$request->bearerToken());
         auth('sanctum')->user()->tokens()->find($token[0])->delete();
-
+        User::where('id', auth('sanctum')->user()->id)->update(['is_web_login' => 0, 'status' => 0]);
         return response()->json(['status' => 1, 'message' => 'Logged out successfully']);
     }
 
